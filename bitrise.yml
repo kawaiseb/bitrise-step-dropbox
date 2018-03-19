@@ -10,7 +10,7 @@ app:
 
   - DROPBOX_DEBUG_MODE: "yes"
   - DROPBOX_LOCAL_PATH: "/tmp/test.txt"
-  - DROPBOX_REMOTE_PATH: "."
+  - DROPBOX_REMOTE_PATH: "/toto"
 
 workflows:
   test:

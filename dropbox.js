@@ -18,10 +18,9 @@ if (!dropbox_secret || !dropbox_local_path || !dropbox_remote_path){
 }
 
 uploadFile(dropbox_local_path,dropbox_remote_path,dropbox_secret,function(err){
-	if (err){
+	if (err) {
 		console.log(err);
-	}else{
-		
+	} else {
 		console.log(`INFO : The file ${dropbox_local_path} is uploaded`);
 	}
 });
