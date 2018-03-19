@@ -17,8 +17,7 @@ Create an dropbox application by clicking on **Create app**
 
 ![DropboxCreateApplication](docs/dropbox-create-app.png)
 
-Go in the settings of the application and in the OAuth2 section. Clic on the **Generated access token
-** to get the dropbox secret (*$DROPBOX_SECRET*).
+Go in the settings of the application and in the OAuth2 section. Clic on the **Generated access token** to get the dropbox secret (*$DROPBOX_SECRET*).
 
 ## Credit
 
