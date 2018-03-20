@@ -10,7 +10,7 @@ app:
 
   - DROPBOX_DEBUG_MODE: "yes"
   - DROPBOX_LOCAL_PATH: "/tmp/test.txt"
-  - DROPBOX_REMOTE_PATH: "/toto"
+  - DROPBOX_REMOTE_PATH: "/dirtest"
 
 workflows:
   test:
@@ -30,7 +30,12 @@ workflows:
             #!/bin/bash
             set -ex
             echo "Worflow test for DropBox step..."
-           
+            if [ -z "$DROPBOX_SECRET" ]
+            then
+              echo "You have to  set the var DROPBOX_SECRET to test this step."
+              exit 1:
+            fi
+
     - path::./:
         title: Step test
         inputs:
