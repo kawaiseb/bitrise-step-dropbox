@@ -2,6 +2,8 @@
 
 This step is used to send file to dropbox.
 
+![DropBoxIcon](docs/dropbox-logo.png)
+
 ## Important to know
 
 * This step is able to upload only one file

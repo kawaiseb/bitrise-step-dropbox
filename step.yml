@@ -4,6 +4,10 @@ summary: |
 description: |
   This step is used to send files to dropbox.
 
+  * This step is able to upload only one file
+  * If a remote file exist with the same name, the file is not deleted
+  * If you specify a directory, the directory is created
+
 website: https://github.com/kawaiseb/bitrise-step-dropbox
 source_code_url: https://github.com/kawaiseb/bitrise-step-dropbox
 support_url: https://github.com/kawaiseb/bitrise-step-dropbox/issues
@@ -26,20 +30,37 @@ toolkit:
 inputs:
   - dropbox_secret:
     opts:
-      title: Dropbox secret
+      title: The secret access token (OAuth2)
       description: | 
+        You have to generate a secret access token in [the developer website](https://www.dropbox.com/developers).
+        Create an application and go in the setting's application.
+
       is_required: true
    
   - dropbox_local_path:
     opts:
-      title: Dropbox localpath
+      title: Local File
       description: | 
+        The name of the local file you wish to upload on dropbox.
+
+        * Only one file !
+        * If a remote file exist with the same name, the file is not deleted
+        
+        
+        **example :** "/tmp/myapp.ipa" or "/tmp/myapp.apk"
+
       is_required: true
 
   - dropbox_remote_path:
     opts:
-      title: Dropbox remotepath
+      title: Dropbox remote target
       description: | 
+        The directory to upload file in dropbox
+
+        * If you specify a directory that does not exist this one is created
+
+        **example :** "/delivery/ios" or "/delivery/android"
+
       is_required: true
 
   - dropbox_debug_mode: "no"
